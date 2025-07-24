@@ -1,3 +1,7 @@
+import {type ClassValue, clsx} from "clsx";
+import {twMerge} from "tailwind-merge";
+
+
 export function formatBytes(bytes: number): string {
   if (bytes < 1024) return `${bytes} B`;
 
@@ -14,7 +18,11 @@ export function formatBytes(bytes: number): string {
   return `${gb.toFixed(2)} GB`;
 }
 
-
 export function generateUUID() {
   return crypto.randomUUID();
 }
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+

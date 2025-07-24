@@ -92,10 +92,10 @@ function resume() {
           {feedback ? (
             <div className="flex flex-col gap-8 animate-in fade-in duration-500">
               Summary ATS Details
-              <Summary feeback={feedback} />
+              <Summary feedback={feedback} />
               <Ats
                 score={feedback.ATS.score || 0}
-                suggestions={feedback.padStart.tips}
+                suggestions={feedback.ATS.tips}
               />
               <Details feedback={feedback} />
             </div>
