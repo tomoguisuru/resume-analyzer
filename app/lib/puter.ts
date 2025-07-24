@@ -334,6 +334,8 @@ export const usePuterStore = create<PuterStore>((set, get) => {
       return;
     }
 
+    console.log(import.meta.env.VITE_AI_MODEL);
+
     return puter.ai.chat(
       [
         {
@@ -350,7 +352,7 @@ export const usePuterStore = create<PuterStore>((set, get) => {
           ],
         },
       ],
-      { model: "claude-sonnet-4" }
+      { model: import.meta.env.VITE_AI_MODEL }
     ) as Promise<AIResponse | undefined>;
   };
 

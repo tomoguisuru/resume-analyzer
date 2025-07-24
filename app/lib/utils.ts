@@ -13,3 +13,8 @@ export function formatBytes(bytes: number): string {
 
   return `${gb.toFixed(2)} GB`;
 }
+
+
+export function generateUUID() {
+  return crypto.randomUUID();
+}
